@@ -3,17 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>get과 post / input type 등등</title>
+  <style>
+    #id{width: 200px;}
+  </style>
 </head>
 <body>
-  <!--action: 전송할 주소-->
-  <!--input type="submit" : 버튼 생성-->
+  <!--<form action=""> : 보내는 주소-->
+  <!--input type="submit" : 클릭 가능한 버튼 생성, 한줄만 가능-->
+  <!--method="get" : 아이디와 패스워드가 공개형태 / method="post" : 아이디와 패스워드가 비공개 형태 -->
+  <!--maxlength="5": 최대 입력 가능한 자릿수-->
+  <!--<input type="password"> : '*' 표시로 표시-->
+  <!--<input type="radio"> : 버튼 하나만 선택 가능-->
+  <!--<input type="number"> : 숫자만 입력 가능-->
+  <!--<input type="checkstyle> : 여러가지 선택 가능"-->
+  <!--value=" " :입력 칸이 없으면 넣는다 -->
+  <!--<textarea cols="50" rows="20"> : 가로 50자 세로 20줄을 적을 수 있음-->
+
+
   <form action="http://www.daum.net" name="frm" method="get">
     <label>아이디</label>
-    <input type="text" name="id" ><br>
+    <input type="text" name="id" id="id" maxlength="5"><br>   <!--maxlength="5": 최대 입력 가능한 자릿수 / readonly : 입력,수정이 불가능하게 하는 것, 읽기만 가능-->
     <label>패스워드</label>
-    <input type="password" name="pw" ><br>
-    <input type="submit" value="로그인">
+    <input type="password" name="pw" ><br>  <!--<input type="password"> : '*' 표시로 표시-->
+    <label>전화번호</label>
+    <input type="text" name="phone" ><br>
+    
+    <label>성별</label><br>
+    <input type="radio" name="gender" id="male" value="male"> <!--<input type="radio"> : 버튼 하나만 선택 가능-->
+    <label for="male">남자</lavel> 
+    <input type="radio" name="gender" id="female" value="female" checked> <!--checked : 미리 선택 되는 명령어-->
+    <label for="female">여자</label><br>
+
+    <label>학년</label><br>
+    <input type="radio" name="stuclass" id="one" value="one">
+    <label for="one">1학년</lavel> 
+    <input type="radio" name="stuclass" id="two" value="two">
+    <label for="two">2학년</label>
+    <input type="radio" name="stuclass" id="three" value="three">
+    <label for="two">3학년</label><br>
+    
+    <label>반</label><br>
+    <input type="number" name="stuclass">반<br> <!--<input type="number"> : 숫자만 입력 가능-->
+
+    <label>취미</label><br>
+    <input type="checkbox" name="hobby" id="game" value="game" > <!--value=" " :입력 칸이 없으면 넣는다 -->
+    <label for="game">게임</label>
+    <input type="checkbox" name="hobby" id="golf" value="golf">
+    <label for="golf">골프</label>
+    <input type="checkbox" name="hobby" id="swim" value="swim">
+    <label for="swim">수영</label>
+    <input type="checkbox" name="hobby" id="run" value="run">
+    <label for="run">조깅</label>
+    <input type="checkbox" name="hobby" id="book" value="book">
+    <label for="book">독서</label>
+    <br>
+    <textarea name="content" cols="50" rows="20"></textarea><br> <!--<textarea cols="50" rows="20"> : 가로 50자 세로 20줄을 적을 수 있음-->
+
+    <input type="submit" value="로그인"><br>
+
+    <script>
+      //함수선언
+      function frmBtn(){
+        alert("함수를 호출합니다."); // alert: 알림창
+        var id=document.getElementById("id").value;  //var id = document(화면)의 getElementById("id")의 value(값)을 id 변수에 저장하는 뜻
+        alert("input박스에 입력된 id값 : " + id);
+        if(id==""){
+          alert("아이디를 입력하셔야 로그인이 가능합니다.");
+        }
+      }
+    </script>
+    
+    <button type="button" onclick="frmBtn()">로그인</button>
   </form>
 </body>
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--<input type="search"> : 맨 뒤에 전체 삭제 기능 추가-->
+  <!--<input type="email"> : "@" 유무를 확인하고 없으면 입력하라는 창이 나옴 / required : 필수 입력-->
+  <!--<input type="date"> : 화면에 달력 구현-->
+  <!--<input type="time"> : 화면에 시간 구현-->
+
+  <form action="" method="get" name="frm">
+    <label>아이디</label>
+    <input type="text" name="id" id="id"><br>
+    
+    <label>검색</label>
+    <input type="search" name="search"><br> <!--<input type="search"> : 맨 뒤에 전체 삭제 기능 추가-->
+
+    <label>이메일</label>
+    <input type="email" name="email" required><br> <!--<input type="email"> : "@" 유무를 확인하고 없으면 입력하라는 창이 나옴 /required : 필수 입력-->
+    <input type="submit" value="전송">
+
+    <label>달력</label>
+    <input type="date" name="date"><br> <!--<input type="date"> : 화면에 달력 구현-->
+
+    <label>시간</label>
+    <input type="time" name="time"> <br> <!--<input type="time"> : 화면에 시간 구현-->
+    <label>파일첨부</label>
+    <input type="file" name="files"><br>  <!--<input type="file"> : 파일첨부에 사용-->
+    
+    <label>과 선택</label>
+    <select name="major"> <!--<select name="major">-->
+      <option value="arch1" >건축공학과</option>
+      <option value="mechanic" selected>기계공학과</option> <!--selected : 미리 선택 되는 명령어-->
+      <option value="computer">컴퓨터공학과</option>
+      <option value="elec">전기공학과</option>
+    </select>
+    <input type="submit" value="전송">
+    <input type="reset" value="지우기"> <!--<input type="reset"> : 모든 입력 정보를 지움-->
+
+  </form>
+</body>
+</html>
