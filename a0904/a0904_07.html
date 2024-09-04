@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <title>주소넣기</title>
+  <style>
+    
+    #pwTxt{ font-weight: 700;}
+    .on{color: blue; }
+    .off{color: red;}
+  </style>
+</head>
+<body>
+  <div id="main">
+    <h3>회원가입</h3><br>
+    <form action="" name="frm" method="get">
+      <label>이름</label>
+      <input type="text" name="name" id="name"><br>
+      
+      <label>아이디</label>
+      <input type="text" name="id" id="id">
+      <button type="button">아이디 중복 확인</button> <br>
+      
+      <script>
+        //함수 선언
+        function pwCheck(){
+          //console.log("호출합니다");
+          //console.log(document.getElementById("pw").value);
+          //console.log(document.getElementById("pw1").value);
+          var pw=document.getElementById("pw").value;
+          var pw1=document.getElementById("pw1").value;
+        
+          if(pw==pw1){
+            //console.log("비밀번호가 일치합니다.");
+            document.getElementById("pwTxt").innerText = "비밀번호가 일치합니다."
+            document.getElementById("pwTxt").classList.remove("off");
+            document.getElementById("pwTxt").classList.add("on"); //document.getElementById("pwTxt").classList.add("on"); : id가 pwTxt인 곳에 class "on"을 추가
+          } else{
+            //console.log("비밀번호가 일치하지 않습니다.");
+            document.getElementById("pwTxt").innerText = "비밀번호가 일치하지 않습니다."
+            document.getElementById("pwTxt").classList.add("off");
+            document.getElementById("pwTxt").classList.remove("on");//document.getElementById("pwTxt").classList.remove("off"); : id가 pwTxt인 곳에 class "off"를 추가
+          }
+        }
+      </script>
+      
+      <label>비밀번호</label>
+      <input type="password" name="pw" id="pw"><br>
+      
+      <label>비밀번호 확인</label>
+      <input type="password" name="pw1" id="pw1" onkeyup="pwCheck()">
+      <span id="pwTxt"></span> <br>
+      
+      
+      <label>생년월일</label>
+      <input type="date" name="date" id="date"><br>
+      
+      <label>성별</label>
+      <input type="radio" name="male" id="male" value="male">
+      <label for="male">남자</label>
+      <input type="radio" name="female" id="female" value="female">
+      <label for="female" >여자</label><br>
+      
+      <label>이메일</label>
+      <input type="text" name="email" id="email">@
+      <input type="text" name="email1" id="email1">
+      <select name="email2" id="email2" onchange="echg()">
+        <option value="">메일주소선택</option>
+        <option value="naver.com">naver.com</option>
+        <option value="daum.net">daum.net</option>
+        <option value="gmail.com">gmail.com</option>
+      </select><br>
+      
+      <label>우편번호</label>
+      <input type="text" name="zipcode" id="zipcode">
+      <button type="button" onclick="addBtn()">주소검색</button><br>
+      
+      <label>주소</label><br>
+      <input type="text" name="address1" id="address1"><br>
+      <input type="text" name="address2" id="address2"><br>
+      <br><br>
+      
+      <button type="button">회원가입</button>
+      <button type="button">취소</button>
+      
+    </form>
+  </div>
+    <script>
+      function addBtn(){
+       // alert("다음주소를 호출합니다.");
+        new daum.Postcode({
+        oncomplete: function(data) {
+           //우편번호
+            document.getElementById("zipcode").value=data.zonecode;
+            document.getElementById("address1").value=data.address
+
+          }
+        }).open();
+      }
+
+      function echg(){
+      var email=document.getElementById("email2").value;
+      //alert("함수호출합니다")
+      
+      if(email==""){  //email의 값이 ""면 {} 문장 실행
+        document.getElementById("email1").value=""; // email1 변수의 값에 ""을 넣어라
+        document.getElementById("email1").readOnly = false; // email1 변수의 읽기 전용 해제
+      }else{
+        document.getElementById("email1").value = email; // eamil1 변수의 값에 email변수를 넣어라
+        document.getElementById("email1").readOnly = true; // email1 변수의 읽기 전용 적용
+      }
+    }
+  </script>
+
+</body>
+</html>
