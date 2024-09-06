@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>border 모양</title>
+  <style>
+    div{height: 200px; /*solid : 실선 / dotted: 점선(원 모양) / dashed : 점선*/
+      background-color: yellowgreen; margin-top: 30px; border: 5px solid black;}
+      /*
+      border-width: 5px;
+      border-color: black;
+      border-style: solid;}
+      */
+    .c01{width: 1000px; border-radius: 20px;}
+    .c02{width: 50%;}
+    .c03{width: 200px; height: 200px; border-radius: 100px;
+      background: url(images/seo3.jpg) no-repeat;
+      background-size: 100%;}
+    .c03:hover{background-size: 120%;
+      background-position: -10px -10px;
+      cursor: pointer;
+      box-shadow: 5px 5px 50px 10px gray;}
+  </style>
+</head>
+<body>
+  <div class="c01">1</div>
+  <div class="c02">2</div>
+  <div class="c03">3</div>
+</body>
+</html>
