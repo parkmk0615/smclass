@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>트랜지션</title>
+  <style>
+  .d01{
+    width: 100px; 
+    height: 100px;
+    background: skyblue;
+    border: 3px solid black;
+    /*transition-property: all;  /* 적용시킬 부분*/
+    /*transition-duration: 1s; /* 몇 초 안에 적용*/
+    /*transition-timing-function: ease-in; 트랜지션 속도 효과
+    transition-delay: 1s;  지연시간*/
+    transition: all 1s ease-in 1s;
+  }
+  .d01:hover{
+    width: 200px; 
+    height: 200px;
+    background: yellow;
+    border-radius: 50%;
+  }
+  </style>
+</head>
+<body>
+  <div class="d01"></div>
+</body>
+</html>
