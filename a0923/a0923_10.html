@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scroll 객체</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    #wrap{ width: 2000px; height: 3000px; border: 1px solid black; background: url(images/a01.jpg);}
+    #d_wrap{position: fixed;}
+    #txt{width: 200px; height: 100px; border: 1px solid black; background: yellow;
+      font-size: 30px; text-align: center;}
+      #img1{width: 300px; height: 300px; border: 1px solid black;
+      background: url(images/a02.jpg);}
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="d_wrap">
+      <div id="txt">0</div>
+      <button id="b01" onclick="first()"> 500 하단이동</button>
+      <button id="b02" onclick="second()"> 1000 이동</button>
+      <button id="b03" onclick="third()"> 2000 이동</button>
+      <div id="img1"></div>
+    </div>
+  </div>
+  
+    <script>
+      // window 이벤트 실행문
+      window.addEventListener("scroll",function(){
+        window.scrollY;
+        window.scrollX;
+        console.log(window.scrollY);
+        console.log(window.scrollX);
+
+        document.getElementById("txt").innerText=window.scrollY; // 움직일때마다 위치 값 표시
+
+        if(window.scrollY > 1000){
+          document.getElementById("wrap").style.backgroundImage = "url('images/nw01.jpg')";
+        }else{
+          document.getElementById("wrap").style.backgroundImage = "url('images/a01.jpg')";
+        }
+        if(window.scrollY > 2000){
+          document.getElementById("img1").style.backgroundImage = "url('images/e01.jpg')";
+        }else if(window.scrollY>1000){
+          document.getElementById("img1").style.backgroundImage = "url('images/e02.jpg')";
+        }else if(window.scrollY>500){
+          document.getElementById("img1").style.backgroundImage = "url('images/e03.jpg')";
+        }else{
+          document.getElementById("img1").style.backgroundImage = "url('images/h01.jpg')";
+        }
+      });
+      function first(){
+        window.scrollTo({top:500, behavior:"smooth"});
+      }
+      function second(){
+        window.scrollTo({top:1000,behavior:"smooth"});
+      }
+      function third(){
+        window.scrollTo({top:2000,behavior:"smooth"});
+      }
+    
+      // 이벤트 실행문
+      // document.getElementById("b01").addEventListener("click", function(){
+      //   alert("버튼 클릭");
+      // })
+    </script>
+</body>
+</html>

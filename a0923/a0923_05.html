@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var tday = new Date('2024-10-1');
+    var year = tday.getFullYear();
+    var month = tday.getMonth();
+    var txtmonth = month+1;
+    if(txtmonth < 10){
+      txtmonth ="0"+txtmonth;
+    }
+    var date = tday.getDate();
+    var txtdate = date;
+    if(txtdate < 10){
+      txtdate ="0"+txtdate;
+    }
+    var day = tday.getDay();
+    var txtDay; //월요일,화요일,수요일
+    if(day==0){
+      txtDay="일요일";
+    }else if(day==1){
+      txtDay="월요일";
+    }else if(day==2){
+      txtDay="화요일";
+    }else if(day==3){
+      txtDay="수요일";
+    }else if(day==4){
+      txtDay="목요일";
+    }else if(day==5){
+      txtDay="금요일";
+    }else if(day==6){
+      txtDay="토요일";
+    }
+
+// 출력 2024-09-24, 월요일
+// 출력 2024-10-01, 화요일
+    document.write(year+"-"+txtmonth+"-"+txtdate+","+txtDay);
+  </script>
+</body>
+</html>
