@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <title>Document</title>
+  <script>
+    //제이쿼리 구문
+    $(function(){
+
+      // 슬라이드 닫힘
+      $(".btn2").click(function(){
+        $(".box").stop();
+        $(".box").slideUp(1000,"linear", function(){
+        
+        });
+      })
+      // 슬라이드 열림
+      $(".btn1").click(function(){
+        $(".box").stop();
+        $(".box").slideDown(1000,"linear", function(){
+        
+        });
+      })
+
+   $(".btn3").on("click",function(){
+    $(".box").fadeIn(1000,"swing",function(){
+
+    })
+   })
+
+   //toggle 효과
+   $(".btn4").on("click",function(){
+    $(".box").stop();
+    $(".box").slideToggle(1000,"ease-in");
+   });
+
+
+  });//제이쿼리 구문
+  </script>
+  <style>
+    .content{
+      width: 400px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn1">슬라이드 열림</button>
+  <button class="btn2">슬라이드 닫힘</button>
+  <button class="btn3">페이드 in</button>
+  <button class="btn4">toggle</button>
+  <br>
+  <div class="box">
+    <div class="content">
+      8월23일 재일 한국계 민족학교인 교토국제중학고등학교(이하 교토국제고)가 고시엔(일본 고교야구대회)에서 우승했다. 일본 효고현 니시노미야에 위치한 한신고시엔 구장에 한국어 교가가 울려퍼졌다. 
+      오랜 연습으로 검붉게 그을린 얼굴에 먼지와 눈물이 범벅이 된 채 선수들은 함께 교가를 불렀다. 한국인, 일본인 관계없이 야구를 좋아하는 팬들은 모두 감동했다. 
+      일본 고교야구부 3700여 팀이 겨루는 고시엔 왕좌의 자리는 보통의 땀으로 차지할 수 없기 때문이다. 찬사와 축하의 말들이 SNS와 각종 미디어에서 넘쳐났다.
+    </div>
+
+  </div>
+
+</body>
+</html>

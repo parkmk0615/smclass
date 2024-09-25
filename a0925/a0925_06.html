@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(function(){
+      $("#dataBtn").click(function(){
+        alert("asd");
+
+        $.ajax({
+          url:"js/stuData.json",
+          type:"get",
+          data:"",
+          dataType:"json",
+          success:function(data){
+            console.log(data);
+           
+            var a_data="";
+            for(var i=0; i<data.length; i++){
+              a_data+="<tr id='"+data[i].no+"'>";
+              a_data+="<td>" + data[i].no + "</td>";
+              a_data+="<td>" + data[i].name + "</td>";
+              a_data+="<td>" + data[i].kor + "</td>";
+              a_data+="<td>" + data[i].eng + "</td>";
+              a_data+="<td>" + data[i].math + "</td>";
+              a_data+="<td>" + (Number(data[i].kor)+Number(data[i].eng)+Number(data[i].math)) + "</td>";
+              a_data+="<td>" + parseInt((Number(data[i].kor)+Number(data[i].eng)+Number(data[i].math))/3) + "</td>";
+              a_data+="<td><button class ='delBtn'>삭제</button></td></tr>";
+            }
+
+            $("#tbody").html(a_data);
+            console.log(a_data);
+          },
+          error:function(){
+            alert("실패");
+
+          }
+        });
+
+
+        $(document).on("click",".delBtn",function(){
+        var del = $(this).closest("tr").attr("id");
+        console.log($(this).closest("tr").attr("id"));
+        $("#"+del).remove();
+        alert("삭제");
+      });
+
+
+        
+      })
+
+
+
+
+
+
+
+
+
+    })
+  </script>
+  <style>
+    h1{text-align: center;}
+    table,th,td{border: 1px solid black;border-collapse: collapse ;}
+    table{width: 80%; margin:0 auto;}
+    th,td{width: 150px; height: 40px; text-align: center;}
+
+  </style>
+</head>
+<body>
+  <h1>게시판</h1>
+  <button id="dataBtn">데이터 가져오기</button>
+  <form action="">
+    <label>이름</label>
+    <input type="text" name="name"><br>
+    <label>국어</label>
+    <input type="text" name="name" id=""><br>
+    <label>영어</label>
+    <input type="text" name="name" id=""><br>
+    <label>수학</label>
+    <input type="text" name="name" id=""><br>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>국어</th>
+        <th>영어</th>
+        <th>수학</th>
+        <th>합계</th>
+        <th>평균</th>
+        <th>삭제</th>
+        
+      </tr>
+    </thead>
+    <tbody id="tbody">
+     
+     
+    </tbody>
+  </table>
+  
+</body>
+</html>
