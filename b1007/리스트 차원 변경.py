@@ -1,6 +1,6 @@
 # 1차원 리스트 -25개
 a_list=[1,2,3,4,5,6,7,8,9]
-for i in range(25):
+for i in range(9,25):
   a_list.append(i+1)
 print(a_list)
 
