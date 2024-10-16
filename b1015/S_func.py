@@ -1,11 +1,19 @@
 # students 리스트 타입
-students = [
-  {"no":1,"name":"홍길동","kor":100,"eng":100,"math":99,"total":299,"avg":99.67,"rank":0},
-  {"no":2,"name":"유관순","kor":80,"eng":80,"math":85,"total":245,"avg":81.67,"rank":0},
-  {"no":3,"name":"이순신","kor":90,"eng":90,"math":91,"total":271,"avg":90.33,"rank":0},
-  {"no":4,"name":"강감찬","kor":60,"eng":65,"math":67,"total":192,"avg":64.00,"rank":0},
-  {"no":5,"name":"김구","kor":100,"eng":100,"math":84,"total":284,"avg":94.67,"rank":0},
-]
+students = []
+stu_keys = []
+# student.txt 파일 읽기
+f=open("students.txt","r",encoding="utf-8")
+while True:
+  line=f.readline()
+  if not line:
+    break
+  s=line.strip().split(",")
+  for i in range(7):
+    if i ==1:
+      continue
+
+
+#-----------------------------
 stuNo = len(students)  # 리스트에 학생이 있으면, 그 인원으로 변경
 choice = 0 # 전역변수
 
@@ -53,9 +61,12 @@ def stu_input(stuNo):
              "math":math,"total":total,"avg":avg,"rank":rank }
       students.append(ss)
       stuNo += 1  # 학생수 1증가
+      
       print(f"{name} 학생성적이 저장되었습니다.!")
       print()
   return stuNo
+
+
 # --------------------
 
 
