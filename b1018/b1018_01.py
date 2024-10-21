@@ -35,5 +35,6 @@ name = input(f"{no}번째 학생 이름을 입력하세요.(0.이전화면) >>")
 kor = int(input("국어점수를 입력하세요."))
 eng = int(input("영어점수를 입력하세요."))
 math = int(input("수학점수를 입력하세요."))
+rank=0
 students.append(stu_chg(no,name,kor,eng,math))
 
