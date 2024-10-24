@@ -71,7 +71,7 @@ while True:
   #Beautifulsoup 데이터 처리
   # 웹 스크래핑
 soup=BeautifulSoup(browser.page_source,"lxml")
-with open('flight_html','w',encoding='utf-8') as f:
+with open('flight1.html','w',encoding='utf-8') as f:
   f.write(soup.prettify())
 
 input('enter키를 입력하면 프로그램이 종료됩니다.')
