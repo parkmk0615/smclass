@@ -30,5 +30,5 @@ elem=browser.find_element(By.CLASS_NAME,"btn_g highlight submit")
 elem.click()
 
 
-time.sleep(1000)
+input("입력 완료")
 

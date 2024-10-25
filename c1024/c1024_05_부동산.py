@@ -13,6 +13,7 @@ import pyautogui
 # browser = webdriver.Chrome()
 # browser.maximize_window()
 # browser.get(url)
+
 # pyautogui.moveTo(1270,550)
 # time.sleep(1)
 # pyautogui.moveTo(1270,480)
@@ -97,21 +98,38 @@ for idx,area in enumerate(areas):
 
 
 print("[ 리스트 출력 ]")
+
 # 매매리스트 생성
 h1_list = [x for x in house_list if x[0]=='매매']
+
 # 전세리스트 생성
 h2_list = [x for x in house_list if x[0] == '전세']
+
 # 평수 별로 구분
 h3_list = [x for x in house_list if x[2]== 59]
 h4_list = [x for x in house_list if x[2]== 72]
 h5_list = [x for x in house_list if x[2]== 84]
 h6_list = [x for x in house_list if x[2]== 101]
+
 # 매매순차정렬
 h1_list.sort(key=lambda x:x[1])
 print(h1_list[:5])
 print("-"*50)
+
 # 전세순차정렬
 h2_list.sort(key=lambda x:x[1])
 print(h2_list[:5])
 print("-"*50)
-#
+
+# 평수 별, 가격 순으로 오름차순 정렬
+h3_list.sort(key=lambda x:x[1])
+print(h3_list)
+
+h4_list.sort(key=lambda x:x[1])
+print(h4_list)
+
+h5_list.sort(key=lambda x:x[1])
+print(h5_list)
+
+h6_list.sort(key=lambda x:x[1])
+print(h6_list)
