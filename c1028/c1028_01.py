@@ -18,17 +18,15 @@ cursor=conn.cursor()
 sql="select * from member"
 cursor.execute(sql)
 rows=cursor.fetchall()
-print("갯수: ",rows)
+#print("갯수: ",rows)
 
 
 # for row in rows:
 #   print(row)
 # print(rows[0][0],rows[0][1],rows[0][2])
 
-for idx in range(len(rows)):
-  for i,row in enumerate(rows):
-    print(row[idx][i])
-
+for row in rows:
+  print(f"{row[0]}\t{row[1]}\t{row[2]}\t{row[3]}\t{row[4]}\t{row[5]}\t{row[6]}\t{row[7]}")
 
 conn.close()
 
