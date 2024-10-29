@@ -220,7 +220,3 @@ select emp_name from employees where emp_name like '%l_';
 select emp_name from employees where emp_name like 'D%';
 
 
-
-select * from employees where emp_name like '%a%';
-
-
