@@ -24,6 +24,11 @@ rows=cursor.fetchall()
 # for row in rows:
 #   print(row)
 # print(rows[0][0],rows[0][1],rows[0][2])
+a=['id','pw','name','email','phone','gender','hobby','date']
+
+
+print(f"{a[0]}\t{a[1]}\t{a[2]}\t{a[3]}\t\t\t\t{a[4]}\t{a[5]}\t{a[6]}\t{a[7]}")
+print("-"*100)
 
 for row in rows:
   print(f"{row[0]}\t{row[1]}\t{row[2]}\t{row[3]}\t{row[4]}\t{row[5]}\t{row[6]}\t{row[7]}")
