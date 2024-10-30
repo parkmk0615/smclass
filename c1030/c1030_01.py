@@ -67,21 +67,22 @@ while True:
     sql ="select * from member where id = :id"
     cursor.execute(sql,id=search)
     row = cursor.fetchone()
-    
+
     if row!= None:
       print("아이디가 존재합니다. 임시 패스워드를 발급합니다.")
-      # 임시 비밀번호를 생성
-      # 이메일로 보냅니다.
-      # 아이디에 비밀번호를 임시 비밀번호로 수정
-      # 임시 번호로 로그인이 나오도록
-    
+      
+      
+      
+      
+
+      # 1. 임시 비밀번호를 생성
       a = random.randrange(0,10000) # 0-9999
       ran_num = f"{a:04}"
       # 랜덤 4자리 숫자
       print(ran_num)
 
       
-      
+      # 2.이메일로 보냅니다.
       # 자신의 네이버메일주소,pw, 받는사람이메일주소
       sendEmail = "parkmk0615@naver.com"
       pw = "@@@@@@"
@@ -106,6 +107,7 @@ while True:
       # 메일 발송 완료
       print("발송 완료")
 
+      # 3. 아이디에 비밀번호를 임시 비밀번호로 수정
       # 입력
       user_id = search
       user_pw = ran_num 
