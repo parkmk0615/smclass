@@ -322,3 +322,4 @@ select sum(salary),round(avg(salary)) from employees;
 select sum(eng),round(avg(eng)), max(eng),min(eng) from students;
 --students 테이블에서 홍길동, 등록일: 2023년 12월 02일 출력
 select name,to_char(sdate,'"등록일 :" yyyy"년"mm"월"dd"일') from students;
+
