@@ -611,15 +611,18 @@ insert into stu_grade values('A등급',90,100);
 commit;
 select * from stu_grade;
 
-select name,total,avg,grade
+select name,total,avg,grade 
 from stu,stu_grade
-where avg between loavg and hiavg;
+where avg between loavg and hiavg
+;
 
-
-update stu set result=(select results from(
-select no,grade as results from stu,stu_grade
-where avg between loavg and hiavg)b
-where a.no=b.no);
+update stu a set result = (
+select results from (
+select no,grade as results 
+from stu,stu_grade
+where avg between loavg and hiavg) b
+where a.no = b.no
+);
 
 
 --self join
@@ -633,5 +636,8 @@ select a.employee_id, a.emp_name, a.manager_id, b.emp_name
 from employees a, employees b
 where a.manager_id=b.employee_id and a.manager_id=124;
 
+select * from students;
+
+select students_seq.nextval from dual;
 
 
