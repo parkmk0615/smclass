@@ -20,9 +20,9 @@ def login(request):
 
     if qs:
       request.session['session_id'] = id
-      request.session['session_nicName'] = qs[0].nicName
+      request.session['session_nicname'] = qs[0].nicname
 
-      context={"lsmg":"1"}
+      context={"lmsg":"1"}
       return render(request,'login.html',context)
     else:
       context={"lmsg":"0"}

@@ -95,10 +95,11 @@ def bview(request,bno):
   print("날짜: ",expires)
   context={"board":qs,"prev_board":prev_qs,"next_board":next_qs,"npage":npage}
   response = render(request,'bview.html',context)
+  
   ## 쿠키확인
   if request.COOKIES.get("cookie_boardNo") is not None:
     cookies =request.COOKIES.get("cookie_boardNo")  #1|5|6|2 
-    cookies_list = cookies.split("|")
+    cookies_list = cookies.split("|") # ['1','5']
     if str(bno) not in cookies_list:
       # 쿠키저장
       response.set_cookie("cookie_boardNo",cookies + f"|{bno}",expires=expires)
@@ -135,4 +136,5 @@ def bwrite(request):
 
     context={'wmsg':"1"}
     return render(request, 'bwrite.html',context)
+
 
